@@ -1,0 +1,29 @@
+<LoginScreenView>
+
+    MDLabel:
+        id: prev_label
+        text: "To log in, enter your personal data:"
+        font_style: "H6"
+        adaptive_height: True
+        halign: "center"
+        pos_hint: {"top": .92}
+
+    MDBoxLayout:
+        orientation: "vertical"
+        pos_hint: {"center_x": .5, "center_y": .7}
+        adaptive_height: True
+        padding: "50dp"
+        spacing: "20dp"
+
+        MDTextField:
+            hint_text: "Login"
+            on_text: root.controller.set_user_data("login", self.text)
+
+        MDTextField:
+            hint_text: "Password"
+            on_text: root.controller.set_user_data("password", self.text)
+
+    MDFillRoundFlatButton:
+        text: "LOGIN"
+        on_release: root.controller.on_tap_button_login()
+        pos_hint: {"center_x": .5, "center_y": .1}
