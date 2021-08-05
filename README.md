@@ -9,3 +9,5 @@ The application demonstrates working with the `FireBase` database. The user ente
 clicks the "LOGIN" button, the application requests data about users from the database, verifies these data with the data
 entered by the user and gives the result: whether the user entered the username and password correctly.
 
+* Login - "Kivy"
+* Password - "KivyMD"
