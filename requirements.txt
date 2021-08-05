@@ -1,0 +1,7 @@
+kivy==2.0.0
+requests
+multitasking
+firebase
+urllib3
+pillow
+kivymd==0.104.2
