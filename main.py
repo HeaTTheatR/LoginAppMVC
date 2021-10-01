@@ -21,6 +21,7 @@ class LoginAppMVC(MDApp):
         self.manager_screens = ScreenManager()
 
     def build(self) -> ScreenManager:
+        self.theme_cls.primary_palette = "Orange"
         return self.manager_screens
 
     def generate_application_screens(self, interval: Union[int, float]) -> NoReturn:
