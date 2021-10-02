@@ -5,6 +5,6 @@ firebase
 firebase-admin
 urllib3
 pillow
-kivymd==0.104.2
+kivymd==1.0.0
 pycryptodome==3.4.3
 requests_toolbelt
