@@ -1,8 +1,6 @@
-import os
 from typing import Union, NoReturn
 
 from kivy.clock import Clock
-from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 
 from kivymd.app import MDApp
@@ -15,7 +13,7 @@ class LoginAppMVC(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.base = Base()
-        self.load_all_kv_files()
+        self.load_all_kv_files(self.directory)
         # This is the screen manager that will contain all the screens of your
         # application.
         self.manager_screens = ScreenManager()
@@ -44,19 +42,6 @@ class LoginAppMVC(MDApp):
 
     def on_start(self) -> NoReturn:
         Clock.schedule_once(self.generate_application_screens, 1)
-
-    def load_all_kv_files(self) -> NoReturn:
-        for d, dirs, files in os.walk(self.directory):
-            for f in files:
-                if (
-                    os.path.splitext(f)[1] == ".kv"
-                    and f != "style.kv"
-                    and "Updates" not in d
-                    and "__MACOS" not in d
-                ):
-                    path_to_kv_file = os.path.join(d, f)
-                    with open(path_to_kv_file, encoding="utf-8") as kv_file:
-                        Builder.load_string(kv_file.read())
 
 
 LoginAppMVC().run()
